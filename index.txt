@@ -1,2 +1,3 @@
 git is good
 git is bad
+git is just so so
