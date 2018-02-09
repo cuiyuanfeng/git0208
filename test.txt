@@ -1,1 +1,65 @@
-test111
+一、git本地仓库创建
+
+1、下载并安装git，以windows平台为例，下载地址：https://git-scm.com/downloads
+   默认安装即可，出现git bash 表示安装成功，
+
+2、安装完成之后，再设置账户名及密码，一般是GitHub上的账户名
+   a、$ git config --global user.name "Your Name"
+   b、$ git config --global user.email "email@example.com"
+   可以通过命令：git config --list查看是否设置成功
+
+3、创建本地git仓库，位于/d/git
+   cd d:
+   mkdir git
+   git init  
+   此时是个空目录，git文件夹下只有一个隐藏的.git文件夹，如没有特殊说明，下面都是在/d/git操作
+
+4、添加文件到本地git仓库
+   新建index.txt文件，内容自定
+   a、git add index.txt             --首先是添加到缓存区，也可一次性添加多个文件
+   b、git commit -m '添加index.txt' --本地提交，-m参数必须有
+   到此index.txt已经正式添加到git仓库中，可以通过命令：git status查看是否还有待提交的文件
+
+5、修改文件，仍以index.txt为例
+   任意修改之后保存文件
+   a、git status 出现提示：modified：index.txt
+      可以通过 git diff index.txt查看改动什么内容
+   b、git commit -m'修改index.txt文件'
+
+6、版本回退
+   通过命令：git log 查看详细提交记录，或者 git log --pretty=oneline 查看简要提交记录，甚至 git reflog 查看更简要记录
+   git reset --hard head^    --回退上一个版本
+   git reset --hard head^^    --回退上上一个版本
+   git reset --hard head~100    --回退前100个版本
+   git reset --hard 版本号    --回退指定版本，通过git reflog获得
+
+7、撤销修改文件
+   如果修改之后，但没提交，可通过以下方法回滚
+   a、如果知道修改的哪些内容，直接手动删除即可
+   b、还可以使用 git reset --hard head^ 回滚到上一个版本
+   c、通过命令：git checkout -- index.txt 放弃修改内容，重新回到上一版本状态 --不能少否则就成创建分支命令了
+     修改后，如果还没有放到暂存区，使用撤销修改就回到和版本库一模一样的状态。
+     另外一种已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
+
+8、删除文件
+   在git仓库中，如果想删除一个文件，步骤如下
+   a、rm index.txt       注意git rm 文件和 rm 文件的区别
+   b、git commit -m '删除文件' 或 git checkout --index.txt 放弃删除操作
+
+
+二、远程仓库 GitHub
+
+1、首先创建GitHub账号，然后创建ssh key，再然后就是创建GitHub仓库了，此处步骤省略
+
+2、现已建好GitHub仓库：git0208
+   git remote add origin https://github.com/cuiyuanfeng/git0208.git --为git仓库添加一个远程源，指向git0208
+
+3、把git仓库内容推送到git0208
+   git push -u origin master -- 第一次推送需要加-u参数，以后不用，这样本地git仓库就和远程GitHub上的git0208实现了关联
+
+4、从GitHub上克隆远程仓库
+   在本地任意目录下，运行命令：
+   git clone https://github.com/cuiyuanfeng/git0208.git
+   这样，就在当前目录下生成一个git0208的文件夹
+
+三、分支
