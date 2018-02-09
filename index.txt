@@ -1,4 +1,14 @@
-git is good
-git is bad
-git is just so so
-4444
+一、git学习教程
+    个人觉得教程1比较详细，但是不如教程2系统，学习的时候可以结合2个教程同时来学
+
+    1、Git使用详细教程：  
+http://www.admin10000.com/document/5374.html
+    2、史上最浅显易懂的Git教程：  
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b00
+
+
+二、git命令
+
+    1、Git 常用命令详解（二）：http://www.oschina.net/question/565065_86025
+
+    2、Git常用命令：https://www.cnblogs.com/cspku/articles/Git_cmds.html
