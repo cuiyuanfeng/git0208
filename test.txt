@@ -24,7 +24,8 @@
    任意修改之后保存文件
    a、git status 出现提示：modified：index.txt
       可以通过 git diff index.txt查看改动什么内容
-   b、git commit -m'修改index.txt文件'
+   b、git add index.txt    -- 仍然要添加到暂存区
+   c、git commit -m'修改index.txt文件'
 
 6、版本回退
    通过命令：git log 查看详细提交记录，或者 git log --pretty=oneline 查看简要提交记录，甚至 git reflog 查看更简要记录
