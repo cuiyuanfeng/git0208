@@ -64,9 +64,17 @@
    这样，就在当前目录下生成一个git0208的文件夹
 
 三、分支
+
 1、创建分支
    以上所述都是基于master分支
    a、git branch bra_1    --创建一个分支，名为bra_1
    b、git checkout bra_1  --切换分支
    其实，两行命令可以合二为一：git checkout -b bra_1,通过命令：git branch 查看所有分支，分支名前带*表示当前所在分支
+
+2、操作分支bra_1
+   修改test.txt文件
+   a、git add test.txt
+   b、git commit -m '在分支bra_1修改test.txt'
+
+   
 
