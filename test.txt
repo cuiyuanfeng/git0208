@@ -76,5 +76,9 @@
    a、git add test.txt
    b、git commit -m '在分支bra_1修改test.txt'
 
-   
+3、合并分支
+   a、git checkout master --切换到主分支
+   b、git merge bra_1     --合并某分支到当前分支
+   c、git branch -d bra_1 --删除分支
 
+4、分支冲突
